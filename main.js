@@ -27,3 +27,42 @@ $singupform.addEventListener('submit', (e) => {
 
     
 })
+
+//LOGIN
+
+const $signinForm = document.querySelector('#login-form')
+
+$signinForm.addEventListener('submit',(e) => {
+    console.log('submit login')
+    e.preventDefault()
+
+    const email = document.querySelector('#login-email').value
+    const password = document.querySelector('#login-password').value
+
+    console.log(email, password )
+
+    //COMUNICACION CON FIREBASE
+    auth
+        .signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+            //clear form
+            $signinForm.reset()
+
+            //hide modal
+            $('#signinModal').modal('hide')
+
+            console.log('logined ok ')
+        })
+
+})
+
+// LOGOUT
+
+const $logout = document.querySelector('#logout')
+
+$logout.addEventListener('click',(e)=> {
+    e.preventDefault()
+    auth.signOut().then(() => {
+        console.log('signout ok')
+    })
+})
