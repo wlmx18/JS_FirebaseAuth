@@ -37,6 +37,17 @@
         </div>    
     </nav>
 
+    <!-- MAIN CONTENT -->
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <ul class="list-group posts">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- MODALS -->
 
 
@@ -112,6 +123,8 @@
 
 <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
 
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
 
 <script>
   // Your web app's Firebase configuration
@@ -126,6 +139,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
+  const fs = firebase.firestore()
 </script>
 <script src="main.js"></script>
 </body>
